@@ -16,6 +16,7 @@ docker run -d -p 80:80 -p 5001:5001 \
 
 #### Mögliche Werte für <docker_image_name>:
     ghcr.io/creadesk/simple_html_hoster:latest
+
     codeberg.org/creadesk/simple_html_hoster:latest
 
 ### Webseite definieren
