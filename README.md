@@ -1,6 +1,10 @@
 
 ### Starten
 ```bash
+mkdir output
+mkdir logs
+```
+```bash
 docker run -d -p 80:80 -p 5001:5001 \ 
 -e CADDY_HOST=localhost \ 
 -e CADDY_PORT=80 
