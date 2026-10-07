@@ -37,11 +37,19 @@ def build_form(content: str = "") -> str:
                 .wrapper{{padding:1rem}}
                 textarea{{height:180px}}
             }}
+            .app-version {{
+                font-size: 0.75rem;          /* kleiner als der Rest */
+                color: #666;                 /* grauer Text */
+                margin-left: 1rem;           /* etwas Abstand */
+                vertical-align: middle;      /* mittig ausrichten */
+            }}
         </style>
     </head>
     <body>
-    <div class="wrapper">
+    <div class="wrapper">        
         <h1>Code einfügen</h1>
+        <!-- Versionsanzeige -->
+        <span class="app-version">v0.0.0</span>
         <form method="post">
             <textarea name="code" placeholder="Hier HTML / CSS einfügen ...">{content}</textarea>
             <button type="submit">Erzeugen & ansehen</button>
