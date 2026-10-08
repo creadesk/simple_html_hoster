@@ -108,6 +108,7 @@ SUCCESS_TEMPLATE = """
 <body>
     <div class="wrapper">
         <h1>Eingaben erfolgreich gespeichert!</h1>
+        <p>Die Seite ist standardmäßig unter Port 80 erreichbar.</p>
         <p><a href="/">Zurück zum Editor</a></p>
     </div>
 </body>
