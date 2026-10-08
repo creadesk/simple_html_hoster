@@ -73,8 +73,8 @@ def index():
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             f.write(code)
 
-        # Weiterleitung zu Caddy
-        return redirect(f"http://{CADDY_HOST}:{CADDY_PORT}/output.html")
+        # ---- Wir schicken den Browser zur *Wurzel* zurück ----
+        return redirect(f"http://{CADDY_HOST}:{CADDY_PORT}/")
 
     # GET‑Anfrage – Inhalt von output.html einlesen, falls vorhanden
     if os.path.exists(OUTPUT_FILE):

@@ -1,3 +1,6 @@
-:80
-root * /srv/www/static
-file_server
+:80 {
+    root * /srv/www/static
+    # If the browser asks for "/", show output.html.
+    rewrite * /output.html
+    file_server
+}
