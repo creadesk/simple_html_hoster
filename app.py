@@ -23,7 +23,7 @@ def build_form(content: str = "") -> str:
     <html lang="de">
     <head>
         <meta charset="utf-8">
-        <title>HTML/CSS Builder</title>
+        <title>HTML/CSS Hoster</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             :root{{--bg:#1e1e2e;--fg:#e0e0e0;--accent:#ff6f61;--border:#333}}
@@ -60,10 +60,39 @@ def build_form(content: str = "") -> str:
     """
 
 SUCCESS_TEMPLATE = """
-<!doctype html>
-<title>Erfolg</title>
-<h1>Eingaben erfolgreich gespeichert!</h1>
-<p><a href="/">Zurück zum Editor</a></p>
+    <!doctype html>
+    <html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>HTML/CSS Hoster</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            :root{{--bg:#1e1e2e;--fg:#e0e0e0;--accent:#ff6f61;--border:#333}}
+            body{{margin:0;font-family:system-ui,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--fg);display:flex;justify-content:center;align-items:center;height:100vh}}
+            .wrapper{{max-width:800px;width:100%;padding:2rem;background:rgba(0,0,0,.7);border-radius:8px;border:1px solid var(--border)}}
+            h1{{font-size:1.5rem;margin-bottom:1rem}}
+            textarea{{width:100%;height:260px;font-family:monospace;font-size:.9rem;color:var(--fg);background:#2a2a35;border:1px solid var(--border);border-radius:4px;padding:.8rem;resize:vertical}}
+            button{{background:var(--accent);color:#fff;border:none;border-radius:4px;padding:.8rem 1.5rem;font-size:1rem;cursor:pointer;margin-top:.8rem}}
+            button:hover{{background:#e2554d}}
+            @media(max-width:480px){{
+                .wrapper{{padding:1rem}}
+                textarea{{height:180px}}
+            }}
+            .app-version {{
+                font-size: 0.75rem;          /* kleiner als der Rest */
+                color: #666;                 /* grauer Text */
+                margin-left: 1rem;           /* etwas Abstand */
+                vertical-align: middle;      /* mittig ausrichten */
+            }}
+        </style>
+    </head>
+    <body>
+    <div class="wrapper">        
+        <h1>Eingaben erfolgreich gespeichert!</h1>        
+        <p><a href="/">Zurück zum Editor</a></p>
+    </div>
+    </body>
+    </html>
 """
 
 # -------------------------------------------------------------
