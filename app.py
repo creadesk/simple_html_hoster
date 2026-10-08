@@ -52,12 +52,19 @@ def build_form(content: str = "") -> str:
         <span class="app-version">v0.0.0</span>
         <form method="post">
             <textarea name="code" placeholder="Hier HTML / CSS einfügen ...">{content}</textarea>
-            <button type="submit">Erzeugen & ansehen</button>
+            <button type="submit">Erzeugen</button>
         </form>
     </div>
     </body>
     </html>
     """
+
+SUCCESS_TEMPLATE = """
+<!doctype html>
+<title>Erfolg</title>
+<h1>Eingaben erfolgreich gespeichert!</h1>
+<p><a href="/">Zurück zum Editor</a></p>
+"""
 
 # -------------------------------------------------------------
 # Endpunkt
@@ -74,7 +81,11 @@ def index():
             f.write(code)
 
         # ---- Wir schicken den Browser zur *Wurzel* zurück ----
-        return redirect(f"http://{CADDY_HOST}:{CADDY_PORT}/")
+        #return redirect(f"http://{CADDY_HOST}:{CADDY_PORT}/")
+        # nur Erfolgsseite anzeigen
+        return render_template_string(
+            SUCCESS_TEMPLATE
+        )
 
     # GET‑Anfrage – Inhalt von output.html einlesen, falls vorhanden
     if os.path.exists(OUTPUT_FILE):
